@@ -107,11 +107,6 @@ inline cv::Mat getOpenCVMat( OFX::Image* img, const OfxRectI& pixelRod, const EI
 
 	//	OfxRectI imgrod = img->getRegionOfDefinition(); // bug in nuke returns bounds... not the clip rod with renderscale...
 	const OfxRectI bounds = img->getBounds();
-    printf("bounds %d %d %d %d\n", bounds.x1, bounds.y1, bounds.x2, bounds.y2);
-    printf("rods %d %d %d %d\n", pixelRod.x1, pixelRod.y1, pixelRod.x2, pixelRod.y2);
-//  TUTTLE_TLOG_VAR( TUTTLE_TRACE, bounds );
-//	TUTTLE_TLOG_VAR( TUTTLE_TRACE, imgrod );
-//	TUTTLE_TLOG_VAR( TUTTLE_TRACE, rod );
     const cv::Size tileSize( bounds.x2 - bounds.x1, bounds.y2 - bounds.y1 );
 
 	// Build view
